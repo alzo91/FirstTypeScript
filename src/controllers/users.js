@@ -7,7 +7,8 @@ function getUsers(request, response) {
 }
 exports.getUsers = getUsers;
 function setUser(request, response) {
-    exports.users.push({ id: exports.users.length + 1, name: request.body.name });
-    return response.status(200).json(exports.users);
+    var user = { id: exports.users.length + 1, name: request.body.name };
+    exports.users.push(user);
+    return response.status(200).json(user);
 }
 exports.setUser = setUser;
